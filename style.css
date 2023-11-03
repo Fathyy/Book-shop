@@ -1,0 +1,238 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --white: #ffff;
+    --black: #000;
+    --primary-blue: #a1bde4;
+}
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 1.6;
+}
+img{
+    max-width: 100%;
+}
+a{
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+li{
+    list-style-type: none;
+}
+/* Small screes first */
+.container{
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.header{
+    min-height: 100vh;
+    background-image: url(images/8170049.jpg);
+    background-position: right 40% bottom 80%;
+    padding: 1rem;
+}
+.project-name{
+    color: var(--black);
+    font-size: 25px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-list{
+    position: fixed;
+    top: 0;
+    left: -200px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+    transition: left 0.5s;
+    background-color: var(--black);
+}
+.nav-items{
+    display: block;
+    margin: 25px;
+    position: relative;
+    text-align: center;
+}
+.nav-link{
+    color: var(--white);
+    position: relative;
+}
+.fa-solid{
+    color: var(--black);
+    font-size: 25px;
+}
+.nav--visible{
+    position: absolute;
+    width: 100%;
+    left: 200px;
+}
+.fa-x{
+    margin: 25px;
+    text-align: center;
+    position: absolute;
+    top: 2px;
+    left: 70px;
+}
+.nav-link::after{
+    position: absolute;
+    left: -50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-blue);
+    height: 3px;
+    width: 0;
+    content: "";
+    transition: 0.5s;
+    bottom: -1px;
+}
+.nav-link:hover::after{
+    width: 100%;
+}
+/* Content */
+.content{
+    margin-top: 7rem;
+    width: 60%;
+}
+.content h1{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.content p{
+    margin-top: 2rem;
+}
+.explore-more{
+    display: inline-block;
+    background-color:gold;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    margin: 2rem 0;
+}
+/* Books section */
+.books{
+    margin: 3rem 0;
+    text-align: center;
+}
+.section-title{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 1rem;
+}
+/* newsletter section */
+input, .signup{
+    outline: none;
+    border: none;
+    font-size: 18px;
+}
+input[type="text"]{
+    background-color: transparent;
+    width: 100%;
+    padding: 10px;
+}
+.signup{
+    background-color: gold;
+    padding: 16px 50px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.input-wrapper{
+    background-color: #D3D3D3;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+/* Footer section */
+.footer{
+    background-color: var(--primary-blue);
+    margin-top: 3rem;
+    padding: 1rem;
+}
+.list-wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+.social-media{
+    margin-top: 1rem;
+}
+.social-media i{
+    font-size: 25px;
+    margin-right: 1rem;
+}
+/* large screens================== */
+@media(min-width:800px){
+    .container{
+        max-width: 1100px;
+    }
+    .fa-solid{
+        display: none;
+    }
+    .nav-list{
+        display: flex;
+        height: auto;
+        position: absolute;
+    }
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav-list{
+        display: flex;
+        height: auto;
+        width: auto;
+        position: relative;
+        padding-top: 0;
+        left: 0;
+        z-index: 0;
+        transition: none;
+        background-color: transparent;
+    }
+    .nav-link{
+        color: var(--black);
+    }
+    .header{
+        background-position: right 40% bottom 87%;
+    }
+
+    /* Books section */
+    .row{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+    .col-p{
+        align-self: flex-start;
+    }
+
+    /* New Arrivals */
+    .arrival{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    /* Footer */
+    .footer-row{
+        display: flex;
+        padding: 2rem 0;
+        gap: 1rem;
+    }
+    .footer-description{
+        width: 50%;
+    }
+    .list-wrapper{
+        width: 50%;
+    }
+}
