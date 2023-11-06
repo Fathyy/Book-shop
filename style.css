@@ -7,6 +7,7 @@
     --white: #ffff;
     --black: #000;
     --primary-blue: #a1bde4;
+    --gold-looking: #ffc801;
 }
 body{
     font-family: 'Roboto Condensed', sans-serif;
@@ -32,13 +33,19 @@ li{
 }
 .header{
     min-height: 100vh;
-    background-image: url(images/8170049.jpg);
-    background-position: right 40% bottom 80%;
+    /* background-image: url(images/8170049.jpg);
+    background-position: right 40% bottom 80%; */
+    background: url(images/secondBg-removebg-preview.png), var(--primary-blue);
     padding: 1rem;
+    background-repeat: no-repeat;
+    background-position: right 40% bottom 80%;
 }
 .project-name{
     color: var(--black);
-    font-size: 25px;
+    font-size: 40px;
+}
+.project-name span{
+    color: var(--gold-looking);
 }
 .navbar{
     display: flex;
@@ -65,6 +72,17 @@ li{
 .nav-link{
     color: var(--white);
     position: relative;
+}
+.nav-link::after{
+    width: 0;
+    height: 3px;
+    background-color: var(--gold-looking);
+    position: absolute;
+    bottom: -1px;
+    content: "";
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.5s;
 }
 .fa-solid{
     color: var(--black);
@@ -112,7 +130,7 @@ li{
 }
 .explore-more{
     display: inline-block;
-    background-color:gold;
+    background-color:var(--gold-looking);
     padding: 1rem 2rem;
     border-radius: 2rem;
     margin: 2rem 0;
@@ -124,8 +142,10 @@ li{
 }
 .section-title{
     text-align: center;
-    font-size: 30px;
     margin-bottom: 1rem;
+}
+.section-title h2{
+    font-size: 35px;
 }
 /* newsletter section */
 input, .signup{
@@ -139,7 +159,7 @@ input[type="text"]{
     padding: 10px;
 }
 .signup{
-    background-color: gold;
+    background-color: var(--gold-looking);
     padding: 16px 50px;
     cursor: pointer;
     border-radius: 30px;
@@ -203,7 +223,7 @@ input[type="text"]{
         color: var(--black);
     }
     .header{
-        background-position: right 40% bottom 87%;
+        background-position: right 0% bottom 47%;
     }
 
     /* Books section */
